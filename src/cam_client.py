@@ -9,4 +9,5 @@ def get_image(host, port, cam, auth):
         auth=auth,
     )
     r = requests.get(url)
+    r.raise_for_status()
     return r.content
